@@ -1,0 +1,949 @@
+
+/* ========================================
+   MY DAILY BLOOM — DARK BOTANICAL THEME
+======================================== */
+
+/* COLOUR SYSTEM */
+
+:root {
+    --bg: #E2EBDD;
+    --surface: #FFFEF7;
+    --surface-soft: #E7E8D9;
+
+    --mint: #A9BBA5;
+    --eucalyptus: #315B50;
+    --sage-light: #A2B18A;
+    --sage: #82977B;
+
+    --moss: #697D3F;
+    --olive: #59652F;
+    --olive-dark: #414B25;
+
+    --forest: #173D2B;
+    --forest-soft: #244936;
+    --deep-green: #102D21;
+
+    --text: #344337;
+    --text-soft: #657362;
+    --muted: #687765;
+    --text-light: #F7F6EF;
+
+    --border: #DDE1D4;
+    --gold: #C3A76A;
+
+    --sage-dark: #345640;
+
+    --shadow: 0 10px 28px rgba(20, 48, 32, 0.12);
+
+    --radius-lg: 25px;
+    --radius-md: 17px;
+}
+
+
+/* RESET */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 28px 24px calc(115px + env(safe-area-inset-bottom));
+    -webkit-font-smoothing: antialiased;
+}
+
+
+/* SCREEN TRANSITIONS */
+
+.app-screen {
+    display: none;
+    min-height: calc(100vh - 120px);
+    animation: screenEnter 0.3s ease;
+}
+
+.app-screen.active {
+    display: block;
+}
+
+@keyframes screenEnter {
+    from {
+        opacity: 0;
+        transform: translateY(7px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* HEADER */
+
+header {
+    padding: 20px 4px 30px;
+}
+
+header p:first-child {
+    color: #536653;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+h1 {
+    color: var(--forest);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(32px, 8vw, 39px);
+    font-weight: normal;
+    letter-spacing: -1.2px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+header p:last-child {
+    color: #536653;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* SECTION HEADINGS */
+
+section {
+    margin-bottom: 27px;
+}
+
+h2 {
+    color: var(--forest);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: normal;
+    line-height: 1.35;
+    margin-bottom: 9px;
+}
+
+.task-section > p,
+.prayer-section > p {
+    color: #E0E6D9;
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+
+/* QUOTE CARD — CHARCOAL FOREST */
+
+/* =========================================
+   MY DAILY BLOOM — HEART-TOUCHING QUOTE CARD
+   ========================================= */
+/* =========================================
+   MY DAILY BLOOM — CREAM GOLD QUOTE CARD
+   ========================================= */
+
+.quote-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        145deg,
+         #2b584a 0%,
+        #65c281 55%,
+        #2b584a 100%
+    );
+    padding: 34px 25px 27px;
+    border: 1px solid #E6D4AE;
+    border-radius: var(--radius-lg);
+    margin-bottom: 29px;
+    box-shadow: 0 9px 25px rgba(130, 101, 55, 0.12);
+    text-align: center;
+}
+
+.quote-card::before {
+    content: "“";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    color: rgba(131, 231, 161, 0.2);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 95px;
+    line-height: 1;
+}
+
+.quote-card::after {
+    content: "❧";
+    position: absolute;
+    right: 10px;
+    bottom: -15px;
+    color: rgba(75, 116, 71, 0.22);
+    font-size: 75px;
+    transform: rotate(-18deg);
+    pointer-events: none;
+}
+
+.quote-card p {
+    position: relative;
+    z-index: 1;
+    color: #cdbd2a;
+   font-family: 'Lora', serif;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: normal;
+    line-height: 1.7;
+    text-align: center;
+    padding: 13px 2px 5px;
+}
+
+.quote-card span {
+    position: relative;
+    z-index: 1;
+    display: block;
+    color: #5f9b68;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 17px;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+
+/* Small mobile screens */
+@media (max-width: 380px) {
+    .quote-card {
+        padding: 29px 19px 24px;
+    }
+
+    .quote-card p {
+        font-size: 19px;
+    }
+}
+
+
+/* QURAN CARD — DEEP EMERALD */
+
+.quran-card {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(145deg, #1B4934, #102D21);
+    color: #F7F3E6;
+    padding: 30px 23px;
+    border: 1px solid rgba(195,167,106,0.3);
+    border-radius: var(--radius-lg);
+    margin-bottom: 28px;
+    text-align: center;
+    box-shadow: 0 12px 30px rgba(16,45,33,0.25);
+}
+
+.quran-card::before {
+    content: "۞";
+    position: absolute;
+    top: 12px;
+    right: 17px;
+    font-size: 60px;
+    color: rgba(195,167,106,0.10);
+}
+
+.quran-label {
+    color: #D0B778;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 18px;
+}
+
+.quran-card h2 {
+    color: #F7F3E6;
+    font-size: 23px;
+    margin-bottom: 18px;
+}
+
+.quran-eyebrow {
+    color: #B9C7AC;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 9px;
+}
+
+.quran-card-top,
+.quran-card-content,
+.quran-card-bottom {
+    position: relative;
+    z-index: 1;
+}
+
+.quran-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.quran-decoration {
+    color: var(--gold);
+    font-size: 24px;
+}
+
+.quran-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--gold);
+    margin: 18px 0;
+}
+
+.quran-divider span {
+    width: 45px;
+    height: 1px;
+    background: rgba(195,167,106,0.5);
+}
+
+.quran-text {
+    color: #F7F3E6;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.quran-reference {
+    color: #D0B778;
+    font-size: 13px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.quran-translation {
+    color: #B9C7AC;
+    font-size: 11px;
+    margin-top: 11px;
+}
+
+.quran-card-bottom {
+    margin-top: 20px;
+}
+
+.quran-card-bottom > span {
+    color: #D0B778;
+    font-family: Georgia, serif;
+    font-size: 17px;
+}
+
+
+/* PROGRESS CARD — DEEP EUCALYPTUS */
+
+.progress-card {
+    background: linear-gradient(145deg, #315B50, #24483E);
+    color: #F7F3E6;
+    padding: 24px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-lg);
+    margin-bottom: 28px;
+    box-shadow: 0 10px 25px rgba(31,75,63,0.18);
+}
+
+.progress-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 21px;
+}
+
+.progress-heading p {
+    color: #C1D1C0;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    margin-bottom: 8px;
+}
+
+.progress-heading h2 {
+    color: #F7F3E6;
+    margin: 0;
+    font-size: 22px;
+}
+
+#progress-percent {
+    color: #E1C47D;
+    font-family: Georgia, serif;
+    font-size: 30px;
+}
+
+.progress-track {
+    height: 9px;
+    background: #193B32;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+#progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #D4BD79, #A9BD8C);
+    border-radius: 30px;
+    transition: width 0.5s ease;
+}
+
+#progress-message {
+    color: #D2DFD1;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 13px;
+}
+
+
+/* TASK SECTION — CHARCOAL FOREST */
+
+.task-section {
+    background: linear-gradient(145deg, #344D3F, #20382D);
+    padding: 25px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px rgba(20,40,28,0.2);
+}
+
+.task-section h2 {
+    color: #F7F3E6;
+}
+
+.task-section > p {
+    color: #D2DFD1;
+}
+
+
+/* TASK INPUT */
+
+.task-input {
+    display: flex;
+    gap: 10px;
+}
+
+.task-input input {
+    flex: 1;
+    min-width: 0;
+    padding: 16px;
+    color: var(--text);
+    background: #F7F3E6;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: var(--radius-md);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.task-input input:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(195,167,106,0.2);
+}
+
+.task-input button {
+    width: 53px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: var(--radius-md);
+    background: #D0B778;
+    color: #243B2B;
+    font-size: 25px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.task-input button:hover {
+    background: #E1CB91;
+}
+
+
+/* TASK LIST */
+
+#task-list {
+    list-style: none;
+    margin-top: 17px;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: #F5F1E4;
+    padding: 17px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: var(--radius-md);
+    margin-bottom: 10px;
+    box-shadow: 0 3px 12px rgba(30,40,20,0.08);
+    animation: screenEnter 0.2s ease;
+}
+
+#task-list li span {
+    flex: 1;
+    min-width: 0;
+    color: #344337;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+#task-list li button {
+    border: none;
+    background: transparent;
+    color: #78816D;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 4px 7px;
+}
+
+
+/* SALAH SECTION — MIDNIGHT FOREST */
+
+.prayer-section {
+    background: linear-gradient(145deg, #263F34, #172F25);
+    padding: 25px;
+    border: 1px solid rgba(195,167,106,0.18);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 25px rgba(20,45,32,0.2);
+}
+
+.prayer-section h2 {
+    color: #F7F3E6;
+}
+
+.prayer-section > p {
+    color: #C2D0C1;
+}
+
+
+/* PRAYER LIST */
+
+#prayer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.prayer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #344D3F;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: var(--radius-md);
+    box-shadow: 0 3px 12px rgba(10,25,17,0.12);
+    color: #F7F3E6;
+    font-size: 15px;
+}
+
+
+/* CHECKBOXES */
+
+input[type="checkbox"] {
+    accent-color: #C3A76A;
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+
+/* BOTTOM NAVIGATION */
+
+.bottom-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #20382D;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    padding: 12px 12px calc(12px + env(safe-area-inset-bottom));
+    border-top: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 -5px 25px rgba(15,35,24,0.2);
+    z-index: 1000;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    min-width: 65px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 13px;
+    background: transparent;
+    color: #B4C0AD;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: color 0.2s, background 0.2s;
+}
+
+.nav-item span {
+    font-size: 22px;
+    line-height: 1.2;
+}
+
+.nav-item small {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.nav-item.active {
+    color: #E1C47D;
+    background: rgba(255,255,255,0.09);
+}
+
+.nav-item:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* BUTTON FEEDBACK */
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* ACCESSIBILITY */
+
+input:focus-visible,
+button:focus-visible {
+    outline-offset: 3px;
+}
+
+
+/* SMALL SCREENS */
+
+@media (max-width: 380px) {
+    body {
+        padding-left: 17px;
+        padding-right: 17px;
+    }
+
+    .quran-card {
+        padding: 26px 18px;
+    }
+
+    .quran-text {
+        font-size: 17px;
+    }
+
+    .quote-card p {
+        font-size: 18px;
+    }
+
+    .task-section,
+    .prayer-section {
+        padding: 20px;
+    }
+}
+
+/* ============================= */
+/* DEAR DIARY - JOURNAL DESIGN */
+/* ============================= */
+
+.journal-section {
+    background: linear-gradient(145deg, #315B50, #24483E);
+    padding: 24px 20px;
+    border-radius: 22px;
+    margin-top: 20px;
+    color: #F4F5ED;
+    box-shadow: 0 8px 20px rgba(25, 55, 42, 0.15);
+}
+
+.journal-heading {
+    margin-bottom: 25px;
+}
+
+.journal-heading h2 {
+    font-size: 21px;
+    margin-bottom: 7px;
+    color: #F4F5ED;
+}
+
+.journal-heading p {
+    color: #D5DFD4;
+    font-size: 13px;
+}
+
+.journal-field {
+    margin-bottom: 22px;
+}
+
+.journal-field label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #F1E8C9;
+}
+
+.journal-field textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid rgba(241, 232, 201, 0.25);
+    border-radius: 14px;
+    background: #E2EBDD;
+    color: #263F34;
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.6;
+    resize: vertical;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.journal-field textarea::placeholder {
+    color: #829083;
+}
+
+.journal-field textarea:focus {
+    border-color: #D9C58D;
+    box-shadow: 0 0 0 3px rgba(217, 197, 141, 0.15);
+}
+
+.save-journal-button {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #D9C58D;
+    border-radius: 14px;
+    background: #D9C58D;
+    color: #20382D;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.save-journal-button:active {
+    transform: scale(0.97);
+}
+
+#journal-status {
+    text-align: center;
+    color: #F1E8C9;
+    font-size: 13px;
+    margin-top: 14px;
+}
+
+/* ============================= */
+/* JOURNAL HISTORY */
+/* ============================= */
+
+.journal-history {
+    margin-top: 30px;
+    padding-top: 22px;
+    border-top: 1px solid rgba(241, 232, 201, 0.25);
+}
+
+.journal-history-heading {
+    margin-bottom: 18px;
+}
+
+.journal-history-heading h2 {
+    color: #F4F5ED;
+    font-size: 20px;
+    margin-bottom: 7px;
+}
+
+.journal-history-heading p {
+    color: #D5DFD4;
+    font-size: 13px;
+}
+
+.empty-journal {
+    color: #D5DFD4;
+    font-size: 13px;
+    text-align: center;
+    padding: 20px 10px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 14px;
+}
+
+.journal-history-item {
+    background: #E2EBDD;
+    border: 1px solid rgba(217, 197, 141, 0.5);
+    border-radius: 14px;
+    padding: 16px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.journal-history-item:active {
+    transform: scale(0.98);
+}
+
+.journal-history-item h3 {
+    color: #24483E;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.journal-history-item p {
+    color: #66786A;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.journal-history-item .read-entry {
+    display: block;
+    color: #8A7543;
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* DEAR DIARY HEADER */
+#journal-screen > header {
+    background: linear-gradient(135deg, #315B50, #24483E);
+    padding: 24px 22px;
+    border-radius: 22px;
+    margin-bottom: 24px;
+    color: #F4F5ED;
+}
+
+#journal-screen > header p {
+    color: #E2EBDD;
+}
+
+#journal-screen > header h1 {
+    color: #F4F5ED;
+}
+
+/* ================================= */
+/* BOTANICAL GREEN HEADERS - ALL SCREENS */
+/* ================================= */
+
+#home-screen > header,
+#tasks-screen > header,
+#salah-screen > header,
+#journal-screen > header {
+    background: linear-gradient(
+        135deg,
+        #386B56,
+        #244B3C,
+        #193D31
+    );
+
+    padding: 26px 22px;
+    border-radius: 22px;
+    margin-bottom: 24px;
+
+    color: #F4F5ED;
+
+    box-shadow: 0 8px 20px rgba(25, 55, 42, 0.16);
+}
+
+/* HEADER TITLES */
+
+#home-screen > header h1,
+#tasks-screen > header h1,
+#salah-screen > header h1,
+#journal-screen > header h1 {
+    color: #F4F5ED;
+}
+
+/* HEADER SUBTITLES */
+
+#home-screen > header p,
+#tasks-screen > header p,
+#salah-screen > header p,
+#journal-screen > header p {
+    color: #E2EBDD;
+}
+
+/* =====================================
+   MY DAILY BLOOM - FLORAL MAKEOVER
+   STEP 1: BACKGROUND AND HEADERS
+===================================== */
+
+/* Soft botanical page background */
+body {
+    background:
+        radial-gradient(circle at 8% 8%, rgba(218, 190, 190, 0.22), transparent 25%),
+        radial-gradient(circle at 95% 35%, rgba(169, 187, 165, 0.25), transparent 28%),
+        #F3F1E8;
+}
+
+/* Floral-style screen headers */
+#home-screen > header,
+#tasks-screen > header,
+#salah-screen > header,
+#journal-screen > header {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #557B68, #355B4A);
+    padding: 27px 23px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 22px rgba(53, 91, 74, 0.16);
+}
+
+/* Subtle floral decoration */
+#home-screen > header::after,
+#tasks-screen > header::after,
+#salah-screen > header::after,
+#journal-screen > header::after {
+    content: "✿";
+    position: absolute;
+    right: 18px;
+    bottom: -22px;
+    font-size: 105px;
+    color: rgba(255, 240, 232, 0.12);
+    pointer-events: none;
+}
+
+/* Header text */
+#home-screen > header h1,
+#tasks-screen > header h1,
+#salah-screen > header h1,
+#journal-screen > header h1 {
+    position: relative;
+    z-index: 1;
+    color: #FFF9F0;
+}
+
+#home-screen > header p,
+#tasks-screen > header p,
+#salah-screen > header p,
+#journal-screen > header p {
+    position: relative;
+    z-index: 1;
+    color: #E8EBDD;
+}
+
+/* Small uppercase heading */
+#home-screen > header p:first-child,
+#tasks-screen > header p:first-child,
+#salah-screen > header p:first-child,
+#journal-screen > header p:first-child {
+    color: #EADBCF;
+}

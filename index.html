@@ -1,0 +1,238 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F4F5ED">
+    <title>My Daily Bloom</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+</head>
+
+<body>
+
+    <!-- HOME SCREEN -->
+    <main id="home-screen" class="app-screen active">
+
+        <header id="home">
+            <p id="today-date">Your day</p>
+            <h1>Good day! 🌿</h1>
+            <p>Let's make today meaningful.</p>
+        </header>
+
+        <section class="quote-card">
+            <p>A little progress each day adds up to big results.</p>
+            <span>— Your daily reminder</span>
+        </section>
+
+        <section class="quran-card">
+
+            <div class="quran-card-top">
+                <span class="quran-label">✦ A VERSE FOR YOUR HEART ✦</span>
+                <span class="quran-decoration">۞</span>
+            </div>
+
+            <div class="quran-card-content">
+                <p class="quran-eyebrow">TODAY'S REFLECTION</p>
+                <h2>Today's Quran Verse</h2>
+
+                <div class="quran-divider">
+                    <span></span>
+                    ✦
+                    <span></span>
+                </div>
+
+                <p id="quran-verse" class="quran-text"></p>
+                <p id="quran-reference" class="quran-reference"></p>
+            </div>
+
+            <div class="quran-card-bottom">
+                <span>بِسْمِ اللَّهِ</span>
+                <p class="quran-translation">
+                    English translation: Sahih International
+                </p>
+            </div>
+
+        </section>
+
+        <section class="progress-card">
+            <div class="progress-heading">
+                <div>
+                    <p>YOUR DAILY JOURNEY</p>
+                    <h2>Today's Progress</h2>
+                </div>
+                <span id="progress-percent">0%</span>
+            </div>
+
+            <div class="progress-track">
+                <div id="progress-fill"></div>
+            </div>
+
+            <p id="progress-message">
+                Every little step counts. Keep blooming! 🌱
+            </p>
+        </section>
+
+    </main>
+
+
+    <!-- TASK SCREEN -->
+    <main id="tasks-screen" class="app-screen">
+
+        <header>
+            <p>YOUR LITTLE GOALS</p>
+            <h1>My Tasks ✨</h1>
+            <p>One step at a time.</p>
+        </header>
+
+        <section class="task-section">
+            <h2>Today's Tasks</h2>
+            <p>What would you like to accomplish today?</p>
+
+            <div class="task-input">
+                <input
+                    type="text"
+                    id="task-input"
+                    placeholder="Add a new task..."
+                >
+                <button id="add-task">+</button>
+            </div>
+
+            <ul id="task-list"></ul>
+        </section>
+
+    </main>
+
+
+    <!-- SALAH SCREEN -->
+    <main id="salah-screen" class="app-screen">
+
+        <header>
+            <p>YOUR DAILY WORSHIP</p>
+            <h1>My Salah 🌙</h1>
+            <p>Make time for what matters.</p>
+        </header>
+
+        <section class="prayer-section">
+            <h2>Five Daily Prayers</h2>
+            <p>Keep track of your daily prayers.</p>
+
+            <div id="prayer-list"></div>
+        </section>
+
+    </main>
+
+
+    <!-- JOURNAL SCREEN -->
+    <main id="journal-screen" class="app-screen">
+
+        <header>
+            <p>A MOMENT FOR YOURSELF</p>
+            <h1>Dear Diary 🌷</h1>
+            <p>Your thoughts, your space.</p>
+        </header>
+
+        <section class="journal-section">
+
+            <div class="journal-heading">
+                <h2>Today's Reflection</h2>
+                <p id="journal-date">Write your heart out.</p>
+            </div>
+
+            <!-- MOOD -->
+            <div class="journal-field">
+                <label for="mood-entry">
+                    How am I feeling today?
+                </label>
+
+                <textarea
+                    id="mood-entry"
+                    placeholder="Today, I feel..."
+                    rows="3"
+                ></textarea>
+            </div>
+
+            <!-- GRATITUDE -->
+            <div class="journal-field">
+                <label for="gratitude-entry">
+                    What am I grateful for today?
+                </label>
+
+                <textarea
+                    id="gratitude-entry"
+                    placeholder="I'm grateful for..."
+                    rows="3"
+                ></textarea>
+            </div>
+
+            <!-- DAILY NOTE -->
+            <div class="journal-field">
+                <label for="day-entry">
+                    A little note about my day
+                </label>
+
+                <textarea
+                    id="day-entry"
+                    placeholder="Today was..."
+                    rows="5"
+                ></textarea>
+            </div>
+
+            <button id="save-journal" class="save-journal-button">
+                Save Today's Journal ✨
+            </button>
+
+            <p id="journal-status" aria-live="polite"></p>
+
+<!-- JOURNAL HISTORY -->
+<section class="journal-history">
+
+    <div class="journal-history-heading">
+        <h2>My Journal Archive 📖</h2>
+        <p>Your little memories, collected over time.</p>
+    </div>
+
+    <div id="journal-history-list">
+        <p class="empty-journal">Your saved memories will appear here. 🌱</p>
+    </div>
+
+</section>
+
+        </section>
+
+    </main>
+
+
+    <!-- BOTTOM NAVIGATION -->
+    <nav class="bottom-nav">
+
+        <button class="nav-item active" data-screen="home-screen">
+            <span>⌂</span>
+            <small>Home</small>
+        </button>
+
+        <button class="nav-item" data-screen="tasks-screen">
+            <span>☑</span>
+            <small>Tasks</small>
+        </button>
+
+        <button class="nav-item" data-screen="salah-screen">
+            <span>☾</span>
+            <small>Salah</small>
+        </button>
+
+        <button class="nav-item" data-screen="journal-screen">
+            <span>✎</span>
+            <small>Journal</small>
+        </button>
+
+    </nav>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
